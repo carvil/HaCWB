@@ -1,0 +1,11 @@
+digraph out {
+ 1 [shape = box, label = "0|0", color = white]; 
+ 0 [shape = box, label = "New {a} ((a.0|~a.0 + b.0))", color = white]; 
+ 2 [shape = box, label = "0", color = white]; 
+ 
+
+ 0 -> 1 [label = "#"];
+ 0 -> 2 [label = "b"];
+ 
+
+}

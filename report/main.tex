@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt]{article}
+
+%\usepackage[latin1]{inputenc}
+\usepackage[utf-8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+%\usepackage{url}
+
+%% Macros
+\def\haskell{\texttt{Haskell}}
+
+%%%%%%%%%%%%%%%%%% Inicio do Documento %%%%%%%%%%%%%%%%%
+\begin{document} % TENTAR POR RODAPE E/OU CABECALHO E ESPAÇOS NO INICIO DE CADA PARÁGRAFO
+
+\title{Ha\_CWB - Haskell Concurrency Workbench, sort of ...}
+\author{José Manuel Serra Marques (35839) \and Carlos Manuel Gomes Vilhena (35812)\and \emph{Departamento de Informática :: Universidade do Minho}}
+\date{\today}
+\maketitle
+
+%  Resumo inicial
+%\include{Abstract}
+\begin{abstract}
+Para a criação do Haskell Concurrency Workbench HA\_CWB foi necessário dividir esse projecto em duas fases: \\
+
+\begin{itemize}
+\item Animação de processos através de grafos de transição - nesta fase, no âmbito da disciplina de Métodos de Programação 4 e principal 
+objectivo para o projecto da mesma disciplina, foram definidos processos em Haskell, e um conjunto de módulos também em Haskell para a 
+manipulação de processos (concretamente avaliação de processos) e criação de grafos de tansição.
+\item Cálculo de processos - segunda fase do projecto, ainda não abordada, que visa a interacção entre processos, a criação de digramas de 
+sincronização de processos, bem como verificar Bissimulação e Equivalência Estrita, Equivalência Observacional e Igualdade de Processos. Para 
+além disso, será ainda objectivo do projecto incluir um \textit{parser} para a linguagem \textit{$\Pi$-Calculus}. \\
+Nesta fase, será ainda incluído um modo gráfico, para facilmente a ferramenta poder ser usada. O modo gráfico será criado em \textit{WX-Haskell}, 
+e toda a ferramenta criada estará por de trás do motor gráfico.
+\end{itemize}
+
+\end{abstract}
+
+\newpage
+
+% Indice				%ja esta
+\tableofcontents
+
+% objectivos & Mote
+\include{Objectivos}  %Trofa
+
+% software utilizado  %Trofa		%ja esta
+\include{SoftwareUtilizado}
+	
+% Hacwb					%ja esta
+\include{Hacwb}
+
+% Modulos HaCWB				%nao da tempo
+\include{ModulosHaCWB}
+
+% TODO					%ja esta
+\include{Todo}
+
+% Conclusao  %Trofa
+\include{Conclusao}
+
+% bibliografia
+\include{bibliografia}
+
+\end{document}

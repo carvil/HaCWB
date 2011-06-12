@@ -1,0 +1,43 @@
+abstract
+indice
+1 Introducao
+2 objectivos e mote
+3 software utilizado
+   3.1 alex
+   3.2 happy
+   3.3 GHC
+4 hacwb (vou ter que ser eu a fazer este ponto todo, pois Ã© a parte que estou a tratar)
+   4.1 descricao da ferramenta
+   4.2 Utilizacao HaCWB - como se usa
+   4.3 Opcoes
+       4.3.1 - help
+       4.3.2 - sintax diagram
+       4.3.3 - evaluation
+       etc
+   4.4 exemplos de utilizacao
+       4.4.1 - Exemplo processo infinito
+       4.4.2 - etc (a partir daqui, um exemplo de cada processo)
+5 - Modulos HaCWB
+   5.1 - Ferramenta
+       5.1.1 - hacwb.hs
+   5.2
+       5.2.1 - Data
+       5.2.2 - Evaluate
+       5.2.3 - TransG2Graphviz
+       5.2.4 - Util
+   5.3 - Parsing
+       5.3.1 - TrabLexer
+       etc ...
+6 - TODO [se calhar, abordar este t—pico j‡ com ideias de como fazer]
+   6.1 - Melhoramentos no codigo
+   6.2 - Modo grafico
+   6.3 - Calculo de processos (simulacoes, bissimilacoes, etc)
+   6.4 - ? (qq coisa que a gente ainda se lembre)
+7 - Conclusao
+8 - bibliografia
+
+
+
+
+
+

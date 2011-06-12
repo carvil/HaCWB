@@ -1,0 +1,14 @@
+P1    = a.b.0 + c.d.0;
+T1    = x.0;
+T11  = a.0|~a.0;
+TN2 = New {a,b} (~a.0 | a.0);
+TPI1 = New {a,b} (a(x).x.0 | c.~a<b>.0);
+TPI2 = New {a,b} (a(x, y).x.y.0 | ~a<b,c>.0);
+TPI22 = New {a,b} (~a<b,c>.0 | a(x, y).x.0);
+TPI222 = New {a,b} (~a<b,c>.0 | a(x, y).~x<y>.T1);
+TPIRenom = New {a,b} (~a<b,c>.0 | a(x, y).~x<y>.T1);
+
+TPI3 = a(x, y).x.0 | ~a<b,c>.a.0;
+
+TPI4 = a(x, y).x.0 | ~a<b>.0;
+

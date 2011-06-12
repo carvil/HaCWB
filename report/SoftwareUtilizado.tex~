@@ -1,0 +1,14 @@
+\section{Software Utilizado}
+Aqui vamos enunciar as três principais ferramentas de software utilizadas no desenvolvimento do trabalho. \\
+Como interpretador principal da linguagem \haskell, utilizamos a ferramenta \textsf{GHC}. \\
+Na construção do interpretador de ficheiros utilizados a ferramenta \textsf{Alex} como \textit{lexer} e a ferramenta \textsf{Happy} como gerador do \textit{parser}. 
+
+\subsection{GHC}
+A ferramenta \textsf{GHC}
+
+
+que nos permiti compilar o trabalho e não apenas interpreta-lo. Isto é tanto ao mais importante pois é nosso objectivo gerar uma ferramenta autónoma e não apenas desenvolver um conjunto de bibliotecas para serem posteriormente interpretadas num qualquer interpretador de \haskell.\\
+
+\subsection{Alex}
+
+\subsection{Happy}

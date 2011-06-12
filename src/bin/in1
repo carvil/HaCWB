@@ -1,0 +1,4 @@
+P = ~m<a>.SERVER | m(cn).~cn<d>.CLIENT;
+
+SERVER = a.0;
+CLIENT = b.0;

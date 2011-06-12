@@ -1,0 +1,52 @@
+\section{Software Utilizado}
+Aqui vamos enunciar as três principais ferramentas de software utilizadas no desenvolvimento do trabalho. Na última secção falaremos resumindamente de outras ferramentas que nos ajudaram a levar o trabalho a ``bom porto''.  \\
+Como compilador principal da linguagem \haskell, utilizamos a ferramenta \textsf{GHC}. \\
+Na construção do interpretador de ficheiros utilizamos a ferramenta \textsf{Alex} como \textit{lexer} e a ferramenta \textsf{Happy} como gerador do \textit{parser}.\\
+O \textsf{Alex} gera a lista de \textit{tokens} reconhecidos no texto de entrada e o \textsf{Happy} interpreta esses \textit{tokens} de acordo com a linguagem especificada.
+
+\subsection{GHC}
+A ferramenta \textsf{GHC} foi escolhida para este trabalho pois ela pemite-nos compilar o trabalho e não apenas interpreta-lo. Isto é tanto ao mais importante pois é nosso objectivo gerar uma ferramenta autónoma e não apenas desenvolver um conjunto de bibliotecas para serem posteriormente interpretadas num qualquer interpretador de \haskell.\\
+Assim sendo, na fase de desenvolvimento do trabalho utilizamos o interpretador \textsf{GHCi}, o que nos permitiu ir monitorizando e corrigindo os erros e quando quisemos gerar a ferramenta \textbf{hacwb} usamos o compilador \textsf{GHC}.\\
+Mais informações em \url{http://www.haskell.org/ghc/}.
+
+\subsection{Alex}
+A ferramenta \textsf{Alex} pretende ser um gerador de analisadores léxicos para a linguagem {\haskell} em que cada \textit{token} é descrito sobe a forma de expressão regular. A melhor maneira de a descrever é dizer que \textsf{Alex} está para o {\haskell} como o \textsf{Flex} está para o \texttt{C/C++}.\\
+Mais informações em \url{http://www.haskell.org/alex/}.
+
+\subsection{Happy}
+\textsf{Happy} pretende ser gerador de \textit{parsers} também para a linguagem \haskell, ou seja, dada uma determinada linguagem na forma \textbf{BNF} (Backus–Naur form), o \textsf{Happy} constroi o respectivo \textit{parser}. A melhor maneira para o descrever é dizer que o \textsf{Happy} está para o {\haskell} como o \textsf{YACC/Bison} está para o \texttt{C/C++}.\\
+De seguida apresenta-se a linguagem utilizada no para este trabalho e as respectivas acções semânticas.
+\newpage
+\begin{verbatim}
+Root :: { LstProcesses String }
+Root : PROCNAME '=' Process ';' Root  { ($1, $3):$5 }
+     | {- empty -} { [] }
+
+Process :: {  Process String }
+Process : Rests Proc_Body { if $1==[] then $2 else (New $1 $2) }
+     | {- empty -} { Zero }
+
+Rests :: { [String] }
+Rests : NEW '{' More_Rests '}' { $3 }
+      | {- empty -} { [] }
+More_Rests : ACT ',' More_Rests { $1:$3 }
+           | ACT { [$1] }
+
+Proc_Body :: { Process String }
+Proc_Body : Pro '+' Pro { Or $1 $3 }
+        | Pro '|' Pro { Paralel $1 $3 } 
+        | Pro { $1 }
+Pro : Pro_Complex { $1 }
+    | P { $1 }
+Pro_Complex : '(' Proc_Body ')'{ $2 }
+P : ACT '.' P { Dot (Var $1) $3 }
+  | '~' ACT '.' P { Dot (Comp $2) $4 }
+  | '0' { Zero }
+  | PROCNAME {NameP $1}
+\end{verbatim}
+
+De notar que a cada produção da gramática está associada a respectiva acção semântica. Como se pode ver acima, o resultado final é a lista de processos contidos no ficheiro de entrada, no tipo de dados que utilizamos no nosso trabalho.\\
+Mais informações em \url{http://www.haskell.org/happy/}.
+
+\subsection{Outras}
+Outra ferramenta que utilizamos no nosso trabalho foi a \textsf{Make} que vem com todas as distribuições \texttt{Unix}, permitindo desta forma automatizar o processo de criação da ferramenta. Para isso basta apenas fazer ``make hacwb'' e o executável é gerado automáticamente.
