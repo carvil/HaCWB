@@ -1,0 +1,8 @@
+src/HaCWB_lib/*.hi
+src/HaCWB_lib/*.o
+
+src/HaCWB_tool/*.hi
+src/HaCWB_tool/*.o
+
+src/Parser/*.hi
+src/Parser/*.o
